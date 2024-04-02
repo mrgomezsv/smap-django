@@ -1,6 +1,15 @@
-@font-face {
-    font-family: OpenSans-Regular;
-    src: url(../fonts/OpenSans/OpenSans-Regular.ttf)
+html {
+    font-family: whitney ssm a,whitney ssm b,lucida grande,lucida sans,Verdana,Helvetica,Arial,sans-serif;
+}
+
+h3,h4,h5,h3 a,h4 a,h5 a,.bsa-cpc .default-title:before,.aside a:not(.btn):hover,.html-css_building-your-first-web-page .building-your-first-web-page a,.html-css_getting-to-know-html .getting-to-know-html a,.html-css_getting-to-know-css .getting-to-know-css a,.html-css_opening-the-box-model .opening-the-box-model a,.html-css_positioning-content .positioning-content a,.html-css_working-with-typography .working-with-typography a,.html-css_setting-backgrounds-and-gradients .setting-backgrounds-and-gradients a,.html-css_creating-lists .creating-lists a,.html-css_adding-media .adding-media a,.html-css_building-forms .building-forms a,.html-css_organizing-data-with-tables .organizing-data-with-tables a,.html-css_writing-your-best-code .writing-your-best-code a,.advanced-html-css_performance-organization .performance-organization a,.advanced-html-css_detailed-css-positioning .detailed-css-positioning a,.advanced-html-css_complex-selectors .complex-selectors a,.advanced-html-css_responsive-web-design .responsive-web-design a,.advanced-html-css_preprocessors .preprocessors a,.advanced-html-css_jquery .jquery a,.advanced-html-css_css-transforms .css-transforms a,.advanced-html-css_transitions-animations .transitions-animations a,.advanced-html-css_feature-support-polyfills .feature-support-polyfills a,.advanced-html-css_semantics-accessibilit .semantics-accessibility a {
+    color: #2db34a;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 * {
@@ -14,17 +23,6 @@ body,html {
     font-family: OpenSans-Regular,sans-serif
 }
 
-a {
-    font-family: OpenSans-Regular;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #666;
-    margin: 0;
-    transition: all .4s;
-    -webkit-transition: all .4s;
-    -o-transition: all .4s;
-    -moz-transition: all .4s
-}
 
 a:focus {
     outline: none!important
@@ -38,13 +36,6 @@ h1,h2,h3,h4,h5,h6 {
     margin: 0
 }
 
-p {
-    font-family: OpenSans-Regular;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #666;
-    margin: 0
-}
 
 ul,li {
     margin: 0;
