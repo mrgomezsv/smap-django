@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout
+from django.shortcuts import render, redirect
+
 
 def user_login(request):
     if request.method == 'POST':
@@ -19,6 +20,9 @@ def user_logout(request):
     logout(request)
     request.session.flush()
     return redirect('login')
+
+def error_404(request, exception):
+    return render(request, 'error/404.html', status=404)
 
 def register(request):
     if request.method == 'POST':

@@ -15,11 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from core.views import user_login, register, dashboard, user_logout
+from django.conf.urls import handler404
+from core.views import user_login, register, dashboard, user_logout, error_404
+
+handler404 = error_404
 
 urlpatterns = [
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
     path('register/', register, name='register'),
     path('dashboard/', dashboard, name='dashboard'),
+
 ]
