@@ -17,6 +17,7 @@ Including another URLconf
 from django.urls import path
 from django.conf.urls import handler404
 from core.views import user_login, register, dashboard, user_logout, error_404
+from core import views
 
 handler404 = error_404
 
@@ -25,5 +26,5 @@ urlpatterns = [
     path('logout/', user_logout, name='logout'),
     path('register/', register, name='register'),
     path('dashboard/', dashboard, name='dashboard'),
-
+    path('productos/', views.productos_view, name='productos'),
 ]

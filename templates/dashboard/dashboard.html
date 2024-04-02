@@ -23,7 +23,7 @@
                     <div class="item-sidebar">
                         <li>
                             <p class="section-title">Section</p>
-                            <a href="#" id="opcion1">Productos</a>
+                            <a href="{% url 'productos' %}" id="opcion1">Productos</a>
                         </li>
                     </div>
                     <!-- <div class="item-sidebar">
@@ -81,8 +81,20 @@
                 <p>Seleccione una opción del menú lateral.</p>
             </div>
         </div>
-        <script src="{% static 'js/scripts.js' %}"></script>
-        <script src="{% static 'js/dashboard.js' %}"></script>
+        <script>
+    document.getElementById('opcion1').addEventListener('click', function(event) {
+        event.preventDefault();
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById('contenido').innerHTML = xhr.responseText;
+            }
+        };
+        xhr.open('GET', '{% url "productos" %}', true);
+        xhr.send();
+    });
+</script>
+
     </body>
 
     <footer>

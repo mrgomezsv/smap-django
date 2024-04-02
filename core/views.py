@@ -38,3 +38,6 @@ def register(request):
 @login_required
 def dashboard(request):
     return render(request, 'dashboard/dashboard.html')
+
+def productos_view(request):
+    return render(request, 'productos.html')
