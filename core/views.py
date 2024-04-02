@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout
 from django.shortcuts import render, redirect
 
-
 def user_login(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
@@ -40,4 +39,4 @@ def dashboard(request):
     return render(request, 'dashboard/dashboard.html')
 
 def productos_view(request):
-    return render(request, 'productos.html')
+    return render(request, 'dashboard/productos.html')
