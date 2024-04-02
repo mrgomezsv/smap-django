@@ -95,13 +95,24 @@ body {
     margin-right: 10px;
 }
 
-.user-profile {
-    display: flex;
-    align-items: center; /* Alinear elementos verticalmente */
-    margin-top: 50px; /* Ajusta según necesites */
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
+.sidebar {
+    position: relative; /* Asegura que los elementos absolutos se posicionen relativos a este div */
+    /* Tu código CSS existente para .sidebar */
 }
+
+.user-profile {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%; /* O el ancho deseado */
+    background-color: #42444e /* Ajusta el color de fondo según tu diseño */
+    border-top: 1px solid #ccc;
+    padding: 10px 20px; /* Ajusta el relleno según sea necesario */
+    box-sizing: border-box; /* Asegura que el relleno esté incluido en el ancho total */
+}
+
 
 .profile-info {
     display: flex;
