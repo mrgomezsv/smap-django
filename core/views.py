@@ -2,6 +2,9 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout
 from django.shortcuts import render, redirect
+from core.models import Product
+from django.http import HttpResponse
+from django.db import connection
 
 def user_login(request):
     if request.method == 'POST':
@@ -39,4 +42,8 @@ def dashboard(request):
     return render(request, 'dashboard/dashboard.html')
 
 def productos_view(request):
-    return render(request, 'dashboard/productos.html')
+    # Obtener todos los productos de la base de datos
+    products = Product.objects.all()
+
+    # Pasar los productos a la plantilla
+    return render(request, 'dashboard/productos.html', {'products': products})
