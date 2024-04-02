@@ -1,83 +1,16 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style_login.css' %}">
 </head>
 <body>
-<div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-            <form class="login100-form validate-form" method="post">
-                {% csrf_token %}
-                <span class="login100-form-title p-b-33">
-                    Account Login
-                </span>
-                <div class="wrap-input100 validate-input">
-                    <input class="input100" type="email" name="email" placeholder="Email" required>
-                    <span class="focus-input100-1"></span>
-                    <span class="focus-input100-2"></span>
-                </div>
-                <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" name="password" placeholder="Password" required>
-                    <span class="focus-input100-1"></span>
-                    <span class="focus-input100-2"></span>
-                </div>
-                <div class="container-login100-form-btn m-t-20">
-                    <button class="login100-form-btn" type="submit">
-                        Sign in
-                    </button>
-                </div>
-                <div class="text-center p-t-45 p-b-4">
-                    <span class="txt1">
-                        Forgot
-                    </span>
-                    <a href="#" class="txt2 hov1">
-                        Username / Password?
-                    </a>
-                </div>
-                <div class="text-center">
-                    <span class="txt1">
-                        Create an account?
-                    </span>
-                    <a href="#" class="txt2 hov1">
-                        Sign up
-                    </a>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Aquí incluirías tus scripts de JavaScript -->
-<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
-<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
-<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
-<script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
-<script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
-<script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
-
-<!-- Aquí incluirías tus scripts de terceros como Google Tag Manager -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-23581568-13');
-</script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
-        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
-        data-cf-beacon='{"rayId":"86de17f66de425b8","version":"2024.3.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
-        crossorigin="anonymous"></script>
+    <h2>Iniciar Sesión</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Iniciar Sesión</button>
+    </form>
 </body>
 </html>
