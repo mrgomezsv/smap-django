@@ -107,7 +107,7 @@ body {
     align-items: center;
     cursor: pointer;
     width: 100%; /* O el ancho deseado */
-    background-color: #42444e /* Ajusta el color de fondo según tu diseño */
+    background-color: #42444e; /* Ajusta el color de fondo según tu diseño */
     border-top: 1px solid #ccc;
     padding: 10px 20px; /* Ajusta el relleno según sea necesario */
     box-sizing: border-box; /* Asegura que el relleno esté incluido en el ancho total */
