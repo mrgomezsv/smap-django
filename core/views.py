@@ -6,6 +6,23 @@ from core.models import Product
 from django.http import HttpResponse
 from django.db import connection
 
+
+def productos_view(request):
+    # Obtener todos los productos de la base de datos
+    productos = Product.objects.all()
+
+    # Imprimir los datos de todos los productos (solo para fines de depuración)
+    for producto in productos:
+        print("Título:", producto.title)
+        print("Categoría:", producto.category)
+        print("Imagen destacada:", producto.featured_image)
+        print("Descripción:", producto.description)
+        print("Imágenes adicionales:", producto.additional_images)
+
+    # Pasar todos los productos al contexto de la plantilla
+    return render(request, 'dashboard/productos.html', {"productos": productos})
+
+
 def user_login(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
@@ -40,10 +57,3 @@ def register(request):
 @login_required
 def dashboard(request):
     return render(request, 'dashboard/dashboard.html')
-
-def productos_view(request):
-    # Obtener todos los productos de la base de datos
-    products = Product.objects.all()
-
-    # Pasar los productos a la plantilla
-    return render(request, 'dashboard/productos.html', {'products': products})
