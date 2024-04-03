@@ -10,12 +10,12 @@ def productos_view(request):
     productos = Product.objects.all()
 
     # Imprimir los datos de todos los productos (solo para fines de depuración)
-    for producto in productos:
-        print("Título:", producto.title)
-        print("Categoría:", producto.category)
-        print("Imagen destacada:", producto.featured_image)
-        print("Descripción:", producto.description)
-        print("Imágenes adicionales:", producto.additional_images)
+    # for producto in productos:
+    #    print("Título:", producto.title)
+    #    print("Categoría:", producto.category)
+    #    print("Imagen destacada:", producto.featured_image)
+    #    print("Descripción:", producto.description)
+    #    print("Imágenes adicionales:", producto.additional_images)
 
     # Pasar todos los productos al contexto de la plantilla
     return render(request, 'dashboard/productos.html', {"productos": productos})
