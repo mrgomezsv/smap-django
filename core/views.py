@@ -3,8 +3,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout
 from django.shortcuts import render, redirect
 from core.models import Product
-from django.http import HttpResponse
-from django.db import connection
 
 
 def productos_view(request):
