@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout
 from django.shortcuts import render, redirect
 from core.models import Product
+from core.forms import ProductForm
 
 
 def productos_view(request):
@@ -18,7 +19,16 @@ def productos_view(request):
     #    print("Imágenes adicionales:", producto.additional_images)
 
     # Pasar todos los productos al contexto de la plantilla
-    return render(request, 'dashboard/productos.html', {"productos": productos})
+    #return render(request, 'dashboard/productos.html', {"productos": productos})
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)  # Asegúrate de incluir request.FILES para manejar archivos
+        if form.is_valid():
+            form.save()  # Esto guardará los datos en la base de datos
+            return redirect('productos')  # Redirige a la página de productos después de crear uno
+    else:
+        form = ProductForm()
+    return render(request, 'dashboard/productos.html', {'productos': productos, 'form': form})
 
 
 def user_login(request):
