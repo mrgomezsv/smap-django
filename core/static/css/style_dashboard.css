@@ -149,3 +149,8 @@ main {
 .menu-lateral::-webkit-scrollbar {
   display: none;
 }
+
+.modal-img {
+    width: 200px;
+    height: 200px;
+}
