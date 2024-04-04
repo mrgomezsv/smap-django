@@ -15,8 +15,10 @@
             {% csrf_token %}
             {{ form.as_p }}
             <button class="login-button" type="submit">Iniciar Sesión</button>
-            <div class="hourglass-container">
-                <i class="fas fa-hourglass-start" style="display: none; justify-content: center; align-items: center;"></i>
+            <div class="hourglass-container" style="display: flex; justify-content: center;">
+                <div class="text-center">
+                    <i class="fas fa-hourglass-start text-center" style="display: none;"></i>
+                </div>
             </div>
         </form>
     </div>
