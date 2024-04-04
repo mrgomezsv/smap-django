@@ -154,3 +154,9 @@ main {
     width: 200px;
     height: 200px;
 }
+
+#selected-image {
+  border-radius: 5px; /* Ajusta el valor según el radio que desees */
+  border: 1px solid #ced4da; /* Color del borde */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras: offsetX, offsetY, blurRadius, spreadRadius, color */
+}
